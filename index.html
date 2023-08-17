@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <button id="ascendingSearch" type="button" class="btn btn-primary">Sort By Ascending</button>
+      <button id="descendingSearch" type="button" class="btn btn-primary">Sort By Descending</button>
+    </div>
+
+    <div class="container input-group mt-5">
+      <input id="inputSearch" type="text" class="form-control" placeholder="search here..." aria-label="Recipient's username" aria-describedby="basic-addon2" />
+      <div class="search-button">
+        <button id="searchButton" type="button" class="btn btn-primary">Search</button>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script>
+      // array
+      var arrayOfNames = ["Bryan", "Axel", "Daniel", "Chelsea", "Ethan"];
+
+      // ID Selectors
+      var ascendingButton = document.getElementById("ascendingSearch");
+      var descendingButton = document.getElementById("descendingSearch");
+      var searchButton = document.getElementById("searchButton");
+      var search = document.getElementById("inputSearch");
+
+      // Event Listener Syntaxs
+      ascendingButton.addEventListener("click", function () {
+        var sortedArray = arrayOfNames.slice().sort();
+        console.log("Diurutkan dari A-Z:", sortedArray);
+      });
+
+      descendingButton.addEventListener("click", function () {
+        var sortedArray = arrayOfNames.slice().sort().reverse();
+        console.log("Diurutkan dari Z-A:", sortedArray);
+      });
+
+      searchButton.addEventListener("click", function () {
+        var searchName = search.value;
+        if (arrayOfNames.includes(searchName)) {
+          console.log(searchName);
+        } else {
+          console.log("Please Ensure the Name.");
+        }
+      });
+    </script>
+  </body>
+</html>
